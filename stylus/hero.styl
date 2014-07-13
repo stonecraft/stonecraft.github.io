@@ -1,0 +1,43 @@
+#hero
+	position relative
+
+	ul
+		font-size 0
+
+		li
+			display none
+			width 100%
+			height 300px
+			background-size cover
+			background-position 50% 50%
+
+			&.active
+				display block
+
+	.dots
+		position absolute
+		bottom 20px
+		left 50%
+		transform translateX(-50%)
+
+		ul
+			li
+				display inline-block
+				height 17px /* height of dot */
+				width 17px /* width of dot */
+				margin 0 7px
+
+				.dot-active
+					display none
+
+				&.active
+					display inline-block
+
+					.dot
+						display none
+
+					.dot-active
+						display block
+
+				&:hover
+					cursor pointer

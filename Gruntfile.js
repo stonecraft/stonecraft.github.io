@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 					compress: false
 				},
 				files: {
-					"compiled/styles.css" : ["stylus/*.styl"]
+					"compiled/styles.css" : ["bower_components/normalize.css/normalize.css", "fonts/fonts.css", "stylus/site.styl"]
 				}
 			}
 		},
