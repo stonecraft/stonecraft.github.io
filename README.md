@@ -1,14 +1,14 @@
-## Stonecraft Website
+# Stonecraft Website
 
-# Requirements:
+## Requirements:
 
 - nodejs/npm
 
-# Instructions for end users
+## Instructions for end users
 
 1. Open index.html in browser (all compiled assets are commited to revision control so this will worl)
 
-# Instructions for developers
+## Instructions for developers
 
 1. Run `npm install -g bower-cli grunt-cli` if you dont have these installed already
 1. Run `npm install` to pull in actual grunt/bower and dependencies
