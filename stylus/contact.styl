@@ -1,3 +1,74 @@
 #contact
 	background-color #e1e1e1
 	text-align center
+	padding-top 80px
+	font-weight 300
+	padding-bottom 100px
+
+	h1
+		margin-bottom 50px
+		color #565656
+
+	.details
+		font-size 25px
+		margin-bottom 30px
+		color #565656
+
+		p
+			margin 10px 0
+
+		@media screen and (max-width: 450px)
+			font-size 19px
+
+	.beal
+		margin 50px 0
+
+	.rest
+		p
+			margin-bottom 20px
+
+	.form
+		width 100%
+		max-width 400px
+		font-size 0
+		margin-left auto
+		margin-right auto
+		margin-top 50px
+
+		input, textarea
+			background-color #ccc
+			border-radius 8px
+			color #555
+			appearance none
+			border 0 none
+			padding 5px 10px
+			font-size 16px
+
+		.input
+			display inline-block
+			width 50%
+			margin-bottom 20px
+
+			input
+				width 100%
+
+		textarea
+			display block
+			width 100%
+			height 150px
+
+		.submit
+			text-align right
+			margin-top 20px
+
+	.success
+		color green
+		display none
+
+	&.sent
+		.form
+			.submit
+				display none
+
+		.success
+			display block

@@ -19,7 +19,7 @@
 			</div>
 		</div>
 		<div id="hero">
-			<ul>
+			<ul class="images">
 				<li class="active" style="background-image: url('images/hero/hero1.jpg');"></li>
 				<li style="background-image: url('images/hero/hero2.jpg');"></li>
 				<li style="background-image: url('images/hero/hero3.jpg');"></li>
@@ -45,33 +45,99 @@
 			<div class="container">
 				<h1>Specialists in architectural stone concepts &amp; features</h1>
 				<ul>
-					<li><img src="images/content/stone.png" /> Residential &amp; Commercial</li>
-					<li><img src="images/content/stone.png" /> Pillars, gateways &amp; letterboxes</li>
-					<li><img src="images/content/stone.png" /> Exterior &amp; Interior feature walls</li>
-					<li><img src="images/content/stone.png" /> Fireplaces (indoor &amp; outdoor)</li>
-					<li><img src="images/content/stone.png" /> Entry &amp; courtyard columns</li>
-					<li><img src="images/content/stone.png" /> BBQ's</li>
-					<li><img src="images/content/stone.png" /> Chimneys</li>
+					<li>
+						<span class="stone"><img src="images/content/stone.png" /></span>
+						Residential &amp; Commercial
+					</li>
+					<li>
+						<span class="stone"><img src="images/content/stone.png" /></span>
+						Pillars, gateways &amp; letterboxes
+					</li>
+					<li class="indent">
+						<span class="stone"><img src="images/content/stone.png" /></span>
+						Exterior &amp; Interior feature walls
+					</li>
+					<li class="indent">
+						<span class="stone"><img src="images/content/stone.png" /></span>
+						Fireplaces (indoor &amp; outdoor)
+					</li>
+					<li>
+						<span class="stone"><img src="images/content/stone.png" /></span>
+						Entry &amp; courtyard columns
+					</li>
+					<li>
+						<span class="stone"><img src="images/content/stone.png" /></span>
+						BBQ's
+					</li>
+					<li class="spacer">&nbsp;</li>
+					<li class="chimneys">
+						<span class="stone"><img src="images/content/stone.png" /></span>
+						Chimneys
+					</li>
 				</ul>
 			</div>
 		</div>
 		<div id="work">
-			<img class="arrow" src="images/work/scroll-button.png" />
+			<img class="down" src="images/work/scroll-button.png" />
 			<div class="container">
 				<h1>Our recent work</h1>
 				<div class="gallery">
-					<ul>
-						<li><img src="images/work/g1.jpg" /></li>
-						<li><img src="images/work/g2.jpg" /></li>
-						<li><img src="images/work/g3.jpg" /></li>
-						<li><img src="images/work/g4.jpg" /></li>
-						<li><img src="images/work/g5.jpg" /></li>
-						<li><img src="images/work/g6.jpg" /></li>
-					</ul>
-					<div class="scroll">
-						<img src="images/work/gallery-arrow.png" />
+					<div class="scroll prev">
+						<img class="arrow" src="images/work/gallery-arrow-previous.png" />
+						<img class="hover" src="images/work/gallery-arrow-previous-hover.png" />
+					</div>
+					<div class="images">
+						<ul class="row row1">
+							<li class="active"><img src="images/work/g1.jpg" /></li>
+							<li class="active"><img src="images/work/g3.jpg" /></li>
+							<li class="active"><img src="images/work/g5.jpg" /></li>
+							<li><img src="images/work/g7.jpg" /></li>
+							<li><img src="images/work/g9.jpg" /></li>
+							<li><img src="images/work/g12.jpg" /></li>
+							<li><img src="images/work/g14.jpg" /></li>
+							<li><img src="images/work/g16.jpg" /></li>
+							<li><img src="images/work/g18.jpg" /></li>
+							<li><img src="images/work/g20.jpg" /></li>
+							<li><img src="images/work/g22.jpg" /></li>
+							<li><img src="images/work/g24.jpg" /></li>
+							<li><img src="images/work/g26.jpg" /></li>
+							<li><img src="images/work/g28.jpg" /></li>
+							<li><img src="images/work/g30.jpg" /></li>
+							<li><img src="images/work/g32.jpg" /></li>
+							<li><img src="images/work/g34.jpg" /></li>
+							<li><img src="images/work/g36.jpg" /></li>
+						</ul>
+						<ul class="row row2">
+							<li class="active"><img src="images/work/g2.jpg" /></li>
+							<li class="active"><img src="images/work/g4.jpg" /></li>
+							<li class="active"><img src="images/work/g6.jpg" /></li>
+							<li><img src="images/work/g8.jpg" /></li>
+							<li><img src="images/work/g10.jpg" /></li>
+							<li><img src="images/work/g13.jpg" /></li>
+							<li><img src="images/work/g15.jpg" /></li>
+							<li><img src="images/work/g17.jpg" /></li>
+							<li><img src="images/work/g19.jpg" /></li>
+							<li><img src="images/work/g21.jpg" /></li>
+							<li><img src="images/work/g23.jpg" /></li>
+							<li><img src="images/work/g25.jpg" /></li>
+							<li><img src="images/work/g27.jpg" /></li>
+							<li><img src="images/work/g29.jpg" /></li>
+							<li><img src="images/work/g31.jpg" /></li>
+							<li><img src="images/work/g33.jpg" /></li>
+							<li><img src="images/work/g35.jpg" /></li>
+						</ul>
+					</div>
+					<div class="scroll next">
+						<img class="arrow" src="images/work/gallery-arrow.png" />
+						<img class="hover" src="images/work/gallery-arrow-hover.png" />
 					</div>
 				</div>
+			</div>
+		</div>
+		<div id="work-show">
+			<div class="image">
+				<div class="close">&times;</div>
+				<img src="images/work/g1.jpg" />
 			</div>
 		</div>
 		<div id="contact">
@@ -84,24 +150,31 @@
 					<p>e: <a href="mailto:enquiries@stonecraft4u.co.nz">enquiries@stonecraft4u.co.nz</a></p>
 				</div>
 				<p class="beal">
+					<img src="images/contact/beal-logo.png" /><br />
 					BEAL Appraisal Certificate<br />
 					- Gao's Solid Stone Veneer Cladding System
 				</p>
-				<p>Click one of our suppliers to view the latest stone options available</p>
-				<ul>
-					<li><a href="http://www.wairaustone.co.nz">www.wairaustone.co.nz</a></li>
-					<li><a href="http://www.stonestatues.co.nz">www.stonestatues.co.nz</a> "Luxroc Collection"</li>
-				</ul>
-				<p>
-					One of the successful builders that use and endorse our stone:<br />
-					<a href="http://www.diamondhomes.co.nz">www.diamondhomes.co.nz</a>
-				</p>
+				<div class="rest">
+					<p>Click one of our suppliers to view<br /> the latest stone options available</p>
+					<ul>
+						<li><a href="http://www.wairaustone.co.nz">www.wairaustone.co.nz</a></li>
+						<li><a href="http://www.stonestatues.co.nz">www.stonestatues.co.nz</a> "Luxroc Collection"</li>
+					</ul>
+					<p>
+						One of the successful builders that use and endorse our stone:<br />
+						<a href="http://www.diamondhomes.co.nz">www.diamondhomes.co.nz</a>
+					</p>
+				</div>
 				<div class="form">
-					<input type="text" name="name" placeholder="name*" />
-					<input type="text" name="last_name" placeholder="last name" />
-					<input type="text" name="tel_no" placeholder="tel. no" />
-					<input type="text" name="email" placeholder="email*" />
-					<textarea name="message">message</textarea>
+					<div class="input" style="padding-right: 10px;"><input type="text" name="name" placeholder="name*" /></div>
+					<div class="input" style="padding-left: 10px;"><input type="text" name="last_name" placeholder="last name" /></div>
+					<div class="input" style="padding-right: 10px;"><input type="text" name="tel_no" placeholder="tel. no" /></div>
+					<div class="input" style="padding-left: 10px;"><input type="text" name="email" placeholder="email*" /></div>
+					<textarea name="message" placeholder="message"></textarea>
+					<div class="submit"><input type="submit" value="Submit" /></div>
+				</div>
+				<div class="success">
+					<p>Thankyou for your submission. We will be in contact shortly.</p>
 				</div>
 			</div>
 		</div>

@@ -384,6 +384,11 @@ th {
   margin-left: auto;
   margin-right: auto;
 }
+@media screen and (max-width: 1100px) {
+  .container {
+    width: 100%;
+  }
+}
 a,
 a:hover {
   text-decoration: none;
@@ -412,6 +417,11 @@ ul {
   padding-top: 28px;
   padding-bottom: 15px;
 }
+@media screen and (max-width: 446px) {
+  #header .logo img {
+    width: 100%;
+  }
+}
 #header .menu {
   text-align: center;
   border-top: 1px solid #fff;
@@ -429,21 +439,34 @@ ul {
 }
 #hero {
   position: relative;
+  height: 300px;
 }
-#hero ul {
+#hero .images {
   font-size: 0;
 }
-#hero ul li {
-  display: none;
+#hero .images li {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
   width: 100%;
-  height: 300px;
+  height: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   background-position: 50% 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: opacity 0.5s linear;
+  -moz-transition: opacity 0.5s linear;
+  -o-transition: opacity 0.5s linear;
+  -ms-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
 }
-#hero ul li.active {
-  display: block;
+#hero .images li.active {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
 }
 #hero .dots {
   position: absolute;
@@ -490,14 +513,37 @@ ul {
 #content ul li {
   margin-bottom: 50px;
   font-size: 16px;
-  text-transform: uppercase;
   font-weight: 300;
   width: 50%;
   display: inline-block;
 }
+#content ul li.indent {
+  padding-left: 50px;
+}
+#content ul li.chimneys {
+  margin-left: -50px;
+}
 #content ul li img {
   vertical-align: middle;
   margin-right: 15px;
+}
+@media screen and (max-width: 670px) {
+  #content ul li {
+    width: 100%;
+    text-align: center;
+  }
+  #content ul li.indent,
+  #content ul li.chimneys {
+    padding-left: 0;
+    margin-left: 0;
+  }
+  #content ul li.spacer {
+    display: none;
+  }
+  #content ul li .stone {
+    display: block;
+    text-align: center;
+  }
 }
 #work {
   background-image: url("../images/work/work-background.jpg");
@@ -506,8 +552,9 @@ ul {
   background-size: cover;
   position: relative;
   padding-top: 80px;
+  padding-bottom: 80px;
 }
-#work .arrow {
+#work .down {
   position: absolute;
   left: 50%;
   margin-left: -25px;
@@ -521,23 +568,199 @@ ul {
 }
 #work .container .gallery {
   position: relative;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
-#work .container .gallery ul {
+#work .container .gallery .images ul {
   font-size: 0;
 }
-#work .container .gallery ul li {
-  display: inline-block;
+#work .container .gallery .images ul li {
+  display: none;
   padding: 25px;
+  width: 33.33333%;
+}
+@media screen and (max-width: 680px) {
+  #work .container .gallery .images ul li {
+    width: 50%;
+    padding: 8px;
+    display: inline-block;
+  }
+}
+@media screen and (max-width: 450px) {
+  #work .container .gallery .images ul li {
+    width: 100%;
+  }
+}
+#work .container .gallery .images ul li.active {
+  display: inline-block;
+}
+#work .container .gallery .images ul li:hover {
+  cursor: pointer;
+}
+#work .container .gallery .images ul li img {
+  width: 100%;
 }
 #work .container .gallery .scroll {
   position: absolute;
   top: 50%;
-  right: 0;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+#work .container .gallery .scroll .hover {
+  display: none;
+}
+#work .container .gallery .scroll.next {
+  right: -40px;
+}
+#work .container .gallery .scroll.prev {
+  left: -40px;
 }
 #work .container .gallery .scroll:hover {
   cursor: pointer;
 }
+#work .container .gallery .scroll:hover .arrow {
+  display: none;
+}
+#work .container .gallery .scroll:hover .hover {
+  display: block;
+}
+@media screen and (max-width: 680px) {
+  #work .container .gallery .scroll {
+    display: none !important;
+  }
+}
+#work-show {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.7);
+  display: none;
+}
+#work-show.active {
+  display: block;
+}
+#work-show .image {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: relative;
+}
+#work-show .image img {
+  width: 100%;
+}
+#work-show .image .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #000;
+  background-color: rgba(255,255,255,0.7);
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 23px;
+  text-align: center;
+  font-weight: 500;
+}
+#work-show .image .close:hover {
+  cursor: pointer;
+}
+@media screen and (max-width: 850px) {
+  #work-show .image {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 500px) {
+  #work-show .image {
+    width: 95%;
+  }
+}
 #contact {
   background-color: #e1e1e1;
   text-align: center;
+  padding-top: 80px;
+  font-weight: 300;
+  padding-bottom: 100px;
+}
+#contact h1 {
+  margin-bottom: 50px;
+  color: #565656;
+}
+#contact .details {
+  font-size: 25px;
+  margin-bottom: 30px;
+  color: #565656;
+}
+#contact .details p {
+  margin: 10px 0;
+}
+@media screen and (max-width: 450px) {
+  #contact .details {
+    font-size: 19px;
+  }
+}
+#contact .beal {
+  margin: 50px 0;
+}
+#contact .rest p {
+  margin-bottom: 20px;
+}
+#contact .form {
+  width: 100%;
+  max-width: 400px;
+  font-size: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+#contact .form input,
+#contact .form textarea {
+  background-color: #ccc;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  color: #555;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0 none;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+#contact .form .input {
+  display: inline-block;
+  width: 50%;
+  margin-bottom: 20px;
+}
+#contact .form .input input {
+  width: 100%;
+}
+#contact .form textarea {
+  display: block;
+  width: 100%;
+  height: 150px;
+}
+#contact .form .submit {
+  text-align: right;
+  margin-top: 20px;
+}
+#contact .success {
+  color: #008000;
+  display: none;
+}
+#contact.sent .form .submit {
+  display: none;
+}
+#contact.sent .success {
+  display: block;
 }

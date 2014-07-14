@@ -12,11 +12,32 @@
 		li
 			margin-bottom 50px
 			font-size 16px
-			text-transform uppercase
 			font-weight 300
 			width 50%
 			display inline-block
 
+			&.indent
+				padding-left 50px
+
+			&.chimneys
+				margin-left -50px
+
 			img
 				vertical-align middle
 				margin-right 15px
+
+
+			@media screen and (max-width: 670px)
+				width 100%
+				text-align center
+
+				&.indent, &.chimneys
+					padding-left 0
+					margin-left 0
+
+				&.spacer
+					display none
+
+				.stone
+					display block
+					text-align center
