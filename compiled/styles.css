@@ -406,11 +406,29 @@ ul {
   padding: 0;
   list-style: none;
 }
+body {
+  padding-top: 174px;
+}
+@media screen and (max-width: 446px), screen and (max-height: 400px) {
+  body {
+    padding-top: 0;
+  }
+}
 #header {
   background-image: url("../images/header/menu-background.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+@media screen and (max-width: 446px), screen and (max-height: 400px) {
+  #header {
+    position: static;
+  }
 }
 #header .logo {
   text-align: center;
@@ -439,7 +457,7 @@ ul {
 }
 #hero {
   position: relative;
-  height: 300px;
+  height: 400px;
 }
 #hero .images {
   font-size: 0;
@@ -509,6 +527,16 @@ ul {
   padding: 0;
   list-style: none;
   font-size: 0;
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+}
+@media screen and (max-width: 700px) {
+  #content ul {
+    width: 100%;
+    padding-left: 0;
+  }
 }
 #content ul li {
   margin-bottom: 50px;
@@ -571,6 +599,11 @@ ul {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+}
+@media screen and (max-width: 450px) {
+  #work .container .gallery {
+    width: 95%;
+  }
 }
 #work .container .gallery .images ul {
   font-size: 0;
@@ -640,13 +673,14 @@ ul {
   top: 0;
   left: 0;
   background-color: rgba(0,0,0,0.7);
+  z-index: 2;
   display: none;
 }
 #work-show.active {
   display: block;
 }
 #work-show .image {
-  width: 60%;
+  width: 75%;
   margin-left: auto;
   margin-right: auto;
   top: 50%;

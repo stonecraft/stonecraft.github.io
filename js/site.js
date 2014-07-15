@@ -35,12 +35,18 @@
 
 			if ($(row1_actives).last().length) {
 				$(row1_actives).first().removeClass("active");
-				$(row1_actives).last().next().addClass("active")
+				var new_active = $(row1_actives).last().next();
+				$(new_active).addClass("active");
+				var img = $(new_active).find("img");
+				$(img).attr("src", $(img).data("src"));
 			}
 
 			if ($(row2_actives).last().length) {
 				$(row2_actives).first().removeClass("active");
-				$(row2_actives).last().next().addClass("active")
+				var new_active = $(row2_actives).last().next();
+				$(new_active).addClass("active");
+				var img = $(new_active).find("img");
+				$(img).attr("src", $(img).data("src"));
 			}
 
 			checkButtons();

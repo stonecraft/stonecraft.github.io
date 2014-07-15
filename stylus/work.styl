@@ -24,6 +24,9 @@
 			margin-left auto
 			margin-right auto
 
+			@media screen and (max-width: 450px)
+				width 95%
+
 			.images
 				ul
 					font-size 0
@@ -83,13 +86,14 @@
 	top 0
 	left 0
 	background-color rgba(0,0,0,0.7)
+	z-index 2
 	display none
 
 	&.active
 		display block
 
 	.image
-		width 60%
+		width 75%
 		margin-left auto
 		margin-right auto
 		top 50%

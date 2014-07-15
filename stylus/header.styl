@@ -1,6 +1,14 @@
 #header
 	background-image url('../images/header/menu-background.jpg')
 	background-size cover
+	position fixed
+	top 0
+	left 0
+	width 100%
+	z-index 1
+
+	@media screen and (max-width: 446px), screen and (max-height: 400px)
+		position static
 
 	.logo
 		text-align center
