@@ -12,7 +12,7 @@
 
 		setInterval(function() {
 			$("#hero .dots li.active").nextWrap().find(".dot").click();
-		}, 3500);
+		}, 7500);
 	});
 
 	/* Work item gallery */
@@ -30,48 +30,48 @@
 		});
 
 		$("#work .gallery .next").click(function() {
-			var row1_actives = $("#work .gallery .row1 .active");
-			var row2_actives = $("#work .gallery .row2 .active");
+			var actives = $("#work .gallery .active");
 
-			if ($(row1_actives).last().length) {
-				$(row1_actives).first().removeClass("active");
-				var new_active = $(row1_actives).last().next();
-				$(new_active).addClass("active");
-				var img = $(new_active).find("img");
-				$(img).attr("src", $(img).data("src"));
-			}
+			if ($(actives).last().length) {
 
-			if ($(row2_actives).last().length) {
-				$(row2_actives).first().removeClass("active");
-				var new_active = $(row2_actives).last().next();
-				$(new_active).addClass("active");
-				var img = $(new_active).find("img");
-				$(img).attr("src", $(img).data("src"));
+				$(actives).slice(0, 3).removeClass("active");
+				var new_actives = $(actives).last().nextAll(":lt(3)");
+
+				$(new_actives).addClass("active");
+
+				$(new_actives).each(function() {
+					var img = $(this).find("img");
+					$(img).attr("src", $(img).data("src"));
+				});
+
 			}
 
 			checkButtons();
 		});
 
 		$("#work .gallery .prev").click(function() {
-			var row1_actives = $("#work .gallery .row1 .active");
-			var row2_actives = $("#work .gallery .row2 .active");
+			var actives = $("#work .gallery .active");
 
-			if ($(row1_actives).first().length) {
-				$(row1_actives).last().removeClass("active");
-				$(row1_actives).first().prev().addClass("active")
-			}
+			if ($(actives).first().length) {
 
-			if ($(row2_actives).first().length) {
-				$(row2_actives).last().removeClass("active");
-				$(row2_actives).first().prev().addClass("active")
+				$(actives).slice(3).removeClass("active");
+				var new_actives = $(actives).first().prevAll(":lt(3)");
+
+				$(new_actives).addClass("active");
+
+				$(new_actives).each(function() {
+					var img = $(this).find("img");
+					$(img).attr("src", $(img).data("src"));
+				});
+
 			}
 
 			checkButtons();
 		});
 
 		function checkButtons() {
-			var hide_prev = $("#work .gallery .row.row1 li").first().is(".active");
-			var hide_next = $("#work .gallery .row.row1 li").last().is(".active");
+			var hide_prev = $("#work .gallery li").first().is(".active");
+			var hide_next = $("#work .gallery li").last().is(".active");
 
 			if (hide_prev) {
 				$("#work .gallery .prev").hide();

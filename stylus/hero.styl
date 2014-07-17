@@ -28,9 +28,14 @@
 		ul
 			li
 				display inline-block
-				height 17px /* height of dot */
-				width 17px /* width of dot */
+				height 10px /* height of dot */
+				width 10px /* width of dot */
 				margin 0 7px
+				position relative
+
+				.dot, .dot-active
+					width 10px
+					position absolute
 
 				.dot-active
 					display none

@@ -442,7 +442,7 @@ body {
 }
 #header .menu {
   text-align: center;
-  border-top: 1px solid #fff;
+  border-top: 1px solid rgba(255,255,255,0.5);
 }
 #header .menu ul {
   padding: 10px 0;
@@ -450,6 +450,7 @@ body {
 #header .menu ul li {
   display: inline-block;
   padding: 0 20px;
+  font-weight: 300;
 }
 #header .menu ul li a {
   color: #fff;
@@ -498,9 +499,15 @@ body {
 }
 #hero .dots ul li {
   display: inline-block;
-  height: 17px;
-  width: 17px;
+  height: 10px;
+  width: 10px;
   margin: 0 7px;
+  position: relative;
+}
+#hero .dots ul li .dot,
+#hero .dots ul li .dot-active {
+  width: 10px;
+  position: absolute;
 }
 #hero .dots ul li .dot-active {
   display: none;
@@ -732,7 +739,7 @@ body {
   color: #565656;
 }
 #contact .details {
-  font-size: 25px;
+  font-size: 20px;
   margin-bottom: 30px;
   color: #565656;
 }
