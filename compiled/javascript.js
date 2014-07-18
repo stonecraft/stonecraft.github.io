@@ -25,7 +25,7 @@ if(k&&j[k]&&(e||j[k].data)||void 0!==d||"string"!=typeof b)return k||(k=i?a[h]=c
 	$(document).ready(function() {
 
 		$("#work .gallery li").click(function(evt) {
-			var src = $(this).find("img").attr("src");
+			var src = $(this).find("img").data("fullsize-image");
 			$("#work-show").find("img").attr("src", src);
 			$("#work-show").addClass("active");
 			evt.stopPropagation();

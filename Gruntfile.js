@@ -31,12 +31,29 @@ module.exports = function(grunt) {
 				files: "js/*.js",
 				tasks: ["concat"]
 			}
+		},
+		responsive_images: {
+			options: {
+				engine: "im", /* ImageMagick */
+				sizes: [{
+					name : "thumb",
+					width : 243,
+					quality : 90
+				}]
+			},
+			files: {
+				expand: true,
+				src: ["g*.jpg"],
+				cwd: "images/work/",
+				dest: "images/work/thumbs/"
+			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-stylus');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-responsive-images');
 
-	grunt.registerTask("default", ["stylus", "concat"]);
+	grunt.registerTask("default", ["stylus", "concat", "responsive_images"]);
 }
