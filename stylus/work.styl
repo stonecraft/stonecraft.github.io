@@ -100,8 +100,14 @@
 		transform translateY(-50%)
 		position relative
 
-		img
+		.loader
+			position absolute
+			top 50%
+			left 50%
+
+		.picture
 			width 100%
+			display none
 
 		.close
 			position absolute
@@ -115,9 +121,18 @@
 			font-size 23px
 			text-align center
 			font-weight 500
+			display none
 
 			&:hover
 				cursor pointer
+
+	&.loaded
+		.image
+			.picture, .close
+				display block
+
+			.loader
+				display none
 
 		@media screen and (max-width: 850px)
 			width 80%

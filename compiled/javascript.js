@@ -26,9 +26,13 @@ if(k&&j[k]&&(e||j[k].data)||void 0!==d||"string"!=typeof b)return k||(k=i?a[h]=c
 
 		$("#work .gallery li").click(function(evt) {
 			var src = $(this).find("img").data("fullsize-image");
-			$("#work-show").find("img").attr("src", src);
+			$("#work-show").removeClass("loaded").find("img.picture").attr("src", src);
 			$("#work-show").addClass("active");
 			evt.stopPropagation();
+		});
+
+		$("#work-show img.picture").load(function() {
+			$("#work-show").addClass("loaded");
 		});
 
 		$("#work-show").click(function() {
