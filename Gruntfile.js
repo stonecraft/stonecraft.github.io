@@ -47,6 +47,13 @@ module.exports = function(grunt) {
 				cwd: "images/work/",
 				dest: "images/work/thumbs/"
 			}
+		},
+		'http-server': {
+			dev: {
+				root: ".",
+				port: 8082,
+				host: "0.0.0.0"				
+			}
 		}
 	});
 
@@ -54,6 +61,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-stylus');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-responsive-images');
+	grunt.loadNpmTasks('grunt-http-server');	
 
 	grunt.registerTask("default", ["stylus", "concat", "responsive_images"]);
 }

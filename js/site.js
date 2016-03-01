@@ -96,51 +96,38 @@
 
 	/* Contact Form */
 	$(document).ready(function() {
-		$("#contact .form .submit input").click(function() {
+		$("#contact .form .submit").click(function(evt) {
+			evt.preventDefault();
+		
 			var name = $("#contact .form input[name='name']").val();
 			var last_name = $("#contact .form input[name='last_name']").val();
 			var tel_no = $("#contact .form input[name='tel_no']").val();
 			var email = $("#contact .form input[name='email']").val();
 			var message = $("#contact .form textarea").val();
 
-			var subject = "Stonecraft Contact Form Submission";
-			var body = "Name: " + name + "<br />" +
-					   "Last Name: " + last_name + "<br />" +
-					   "Telephone Number: " + tel_no + "<br />" +
-					   "Email Address: " + email + "<br />" +
-					   "Message: " + message + "<br />";
-
 			if (!name || !email) {
 				alert("Please enter a name and and an email address");
 				return;
 			}
 
-			var mandrill_api_key = "bNzYovZ1dGIrWQk6g4zAow"; //use it to send spam. go on, I dare you.
-
-			var submit = this;
+			var submit = $(this).find("input");
 			$(submit).val("Submitting").attr("disabled", "disabled");
-
-			$.post("https://mandrillapp.com/api/1.0/messages/send.json", {
-				"key" : mandrill_api_key,
-				"message" : {
-					"subject" : subject,
-					"html" : body,
-					"from_email" : "noreply@stonecraft4u.co.nz",
-					"from_name" : "Stonecraft Website",
-					"to" : [{
-						"email" : "enquiries@stonecraft4u.co.nz"
-					}]
-				}
-			}, function(data) {
-				if (data[0].status != "sent") {
-					alert("Error: Unable to send email: " + data[0].reject_reason);
-					$(submit).removeAttr("disabled").val("Submit");
-				} else {
-					$("#contact").addClass("sent");
-					$(submit).hide();
-				}
+			
+			emailjs.send("sendgrid", "stonecraft_contact_form", {
+				name: name,
+				last_name: last_name,
+				tel_no: tel_no,
+				email: email,
+				message: message
+			}).then(function(response) {
+				$("#contact").addClass("sent");
+				$(submit).hide();
+			}, function(error) {
+				alert("Error: Unable to send email: " + error);
+				$(submit).removeAttr("disabled").val("Submit");
 			});
-
+			
+			return false;
 		});
 	});
 
